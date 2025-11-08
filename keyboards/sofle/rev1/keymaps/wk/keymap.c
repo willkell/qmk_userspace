@@ -13,6 +13,11 @@ enum sofle_layers {
     _FUN,
 };
 
+// tap dance
+enum {
+  TD_DOT_CAP = 0
+};
+
 #define KC_QWERTY PDF(_QWERTY)
 #define KC_COLEMAK PDF(_COLEMAK)
 
@@ -23,7 +28,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   KC_NO, KC_NO,        KC_NO,        KC_NO,        KC_NO,        KC_NO,     KC_NO,   KC_NO,        KC_NO,        KC_NO,        KC_NO,           KC_NO,
   KC_NO, KC_Q,         KC_W,         KC_E,         KC_R,         KC_T,      KC_Y,    KC_U,         KC_I,         KC_O,         KC_P,            KC_BSPC,
   KC_ESC, LGUI_T(KC_A), LALT_T(KC_S), LCTL_T(KC_D), LSFT_T(KC_F), KC_G,      KC_H,    LSFT_T(KC_J), LCTL_T(KC_K), LALT_T(KC_L), LGUI_T(KC_QUOT), KC_SCLN,
-  KC_NO, KC_Z,         KC_X,         KC_C,         KC_V,         KC_B,      KC_MUTE, KC_NO,        KC_N,         KC_M,         KC_COMM,         KC_DOT,  KC_SLSH, KC_NO,
+  KC_NO, KC_Z,         KC_X,         KC_C,         KC_V,         KC_B,      KC_MUTE, KC_NO,        KC_N,         KC_M,         KC_COMM,         TD(TD_DOT_CAP),  KC_SLSH, KC_NO,
   KC_NO, KC_NO,       LT(_MOUSE, KC_TAB) ,       LT(_NAV,      KC_SPC),  KC_ENT,MO(_SYM),      LT(_NUM,      KC_BSPC),        LT(_FUN, KC_DEL), KC_NO, KC_NO
 ),
 
@@ -31,7 +36,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   KC_NO, KC_NO,        KC_NO,        KC_NO,        KC_NO,        KC_NO,     KC_NO,   KC_NO,        KC_NO,        KC_NO,        KC_NO,           KC_NO,
   KC_NO, KC_Q,         KC_W,         KC_F,         KC_P,         KC_B,      KC_J,    KC_L,         KC_U,         KC_Y,         KC_QUOT,         KC_BSPC,
   KC_ESC, LGUI_T(KC_A), LALT_T(KC_R), LCTL_T(KC_S), LSFT_T(KC_T), KC_G,      KC_M,    LSFT_T(KC_N), LCTL_T(KC_E), LALT_T(KC_I), LGUI_T(KC_O),    KC_SCLN,
-  KC_NO, KC_Z,         KC_X,         KC_C,         KC_D,         KC_V,      KC_MUTE, KC_NO,        KC_K,         KC_H,         KC_COMM,         KC_DOT,  KC_SLSH, KC_NO,
+  KC_NO, KC_Z,         KC_X,         KC_C,         KC_D,         KC_V,      KC_MUTE, KC_NO,        KC_K,         KC_H,         KC_COMM,         TD(TD_DOT_CAP),  KC_SLSH, KC_NO,
   KC_NO, KC_NO,       LT(_MOUSE, KC_TAB) ,       LT(_NAV,      KC_SPC),  KC_ENT,MO(_SYM),      LT(_NUM,      KC_BSPC),        LT(_FUN, KC_DEL), KC_NO, KC_NO
 ),
 
@@ -75,3 +80,24 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   KC_NO, KC_NO,        KC_NO,        KC_NO,        KC_NO,        MS_BTN2,   MS_BTN1, MS_BTN3,      KC_NO,        KC_NO
 ),
 };
+
+void dot_cap_each(tap_dance_state_t *state, void *user_data) {
+  if (state->count == 1) {
+    tap_code16(KC_DOT);
+  } else if (state->count == 2) {
+    tap_code16(KC_SPC);
+    clear_oneshot_mods();
+    set_oneshot_mods(MOD_BIT(KC_LSFT));
+    state->finished = true;
+  }
+}
+
+tap_dance_action_t tap_dance_actions[] = {
+  [TD_DOT_CAP] = ACTION_TAP_DANCE_FN_ADVANCED(
+    dot_cap_each,
+    NULL,
+    NULL
+  )
+};
+
+
