@@ -13,9 +13,13 @@ enum sofle_layers {
     _FUN,
 };
 
-// tap dance
+// tap dance keycodes
 enum {
-  TD_DOT_CAP = 0
+    TD_DOT_CAP,
+};
+
+enum custom_keycodes {
+    CW_CAPS =  SAFE_RANGE,
 };
 
 #define KC_QWERTY PDF(_QWERTY)
@@ -42,17 +46,17 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 [_NUM] = LAYOUT(
   KC_NO, KC_NO,        KC_NO,        KC_NO,        KC_NO,        KC_NO,     KC_NO,   KC_NO,        KC_NO,        KC_NO,        KC_NO,           KC_NO,
-  KC_NO, KC_LBRC,      KC_7,         KC_8,         KC_9,         KC_RBRC,   KC_NO,   DF(_QWERTY),  DF(_COLEMAK), KC_NO,        QK_BOOT,         KC_NO,
-  KC_NO, KC_SCLN,      KC_4,         KC_5,         KC_6,         KC_EQL,    KC_NO,   KC_LSFT,      KC_LCTL,      KC_LALT,      KC_LGUI,         KC_NO,
-  KC_NO, KC_GRV,       KC_1,         KC_2,         KC_3,         KC_BSLS,   KC_NO,   KC_NO,        KC_NO,        KC_NO,        KC_NO,           KC_NO,   KC_NO,   KC_NO,
-  KC_NO, KC_NO,        KC_DOT,       KC_0,         KC_MINS,      KC_NO,     KC_NO,   KC_NO,        KC_NO,        KC_NO
+  KC_NO, KC_ASTR,      KC_7,         KC_8,         KC_9,         KC_PLUS,   KC_NO,   DF(_QWERTY),  DF(_COLEMAK), KC_NO,        QK_BOOT,         KC_NO,
+  KC_NO, KC_0,      KC_4,         KC_5,         KC_6,          KC_EQL,    KC_NO,   KC_LSFT,      KC_LCTL,      KC_LALT,      KC_LGUI,         KC_NO,
+  KC_NO, KC_SLSH,       KC_1,         KC_2,         KC_3,       KC_MINS,   KC_NO,   KC_NO,        KC_NO,        KC_NO,        KC_NO,           KC_NO,   KC_NO,   KC_NO,
+  KC_NO, KC_NO,        KC_DOT,       KC_SPC,         KC_ENT,      KC_NO,     KC_NO,   KC_NO,        KC_NO,        KC_NO
 ),
 
 [_SYM] = LAYOUT(
   KC_NO, KC_NO,        KC_NO,        KC_NO,        KC_NO,        KC_NO,     KC_NO,   KC_NO,        KC_NO,        KC_NO,        KC_NO,           KC_NO,
-  KC_NO, KC_EXLM,      KC_AT,        KC_HASH,      KC_DLR,       KC_PERC,   KC_EQL,  KC_GRV,       KC_COLN,      KC_SCLN,      KC_PLUS,         KC_NO,
-  KC_NO, KC_LGUI,      KC_LALT,      KC_LCTL,      KC_LSFT,      KC_CIRC,   KC_ASTR, KC_LPRN,      KC_LCBR,      KC_LBRC,      KC_MINS,         KC_NO,
-  KC_NO, KC_NO,        KC_NO,        KC_BSLS,      KC_PIPE,      KC_AMPR,   KC_NO,   KC_NO,        KC_TILD,      KC_RPRN,      KC_RCBR,         KC_RBRC, KC_UNDS, KC_NO,
+  KC_NO, KC_GRV,      KC_TILD,        KC_EXLM,      KC_AT,       KC_PLUS,   KC_PIPE, KC_LCBR,       KC_RCBR,       KC_CIRC,      KC_DLR,         KC_NO,
+KC_ESC, KC_LGUI,      KC_LALT,      KC_LCTL,      KC_LSFT,      KC_COLN,   KC_MINS, KC_LPRN,      KC_RPRN,      KC_UNDS,      KC_EQL,         KC_SCLN,
+  KC_NO, KC_NO,        KC_NO,        KC_HASH,      KC_PERC,       KC_BSLS,   KC_NO,   KC_NO,        KC_SLSH,      KC_LBRC,      KC_RBRC,         KC_AMPR, KC_QUES, KC_NO,
   KC_NO, KC_NO,        KC_NO,        KC_NO,        KC_NO,        KC_NO,     KC_NO,   KC_NO,        KC_NO,        KC_NO
 ),
 
@@ -67,7 +71,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 [_NAV] = LAYOUT(
   KC_NO, KC_NO,        KC_NO,        KC_NO,        KC_NO,        KC_NO,     KC_NO,   KC_NO,        KC_NO,        KC_NO,        KC_NO,           KC_NO,
   KC_NO, QK_BOOT,      KC_NO,        DF(_COLEMAK), DF(_QWERTY),  KC_NO,     C(KC_Y), C(KC_V),      C(KC_C),      C(KC_X),      C(KC_Z),         KC_NO,
-  KC_NO, KC_LGUI,      KC_LALT,      KC_LCTL,      KC_LSFT,      KC_NO,     KC_LEFT, KC_DOWN,      KC_UP,        KC_RGHT,      CW_TOGG,         KC_NO,
+  KC_NO, KC_LGUI,      KC_LALT,      KC_LCTL,      KC_LSFT,      KC_NO,     KC_LEFT, KC_DOWN,      KC_UP,        KC_RGHT,      CW_CAPS,         KC_NO,
   KC_NO, KC_NO,        KC_NO,        KC_NO,        KC_NO,        KC_NO,     KC_NO,   KC_NO,        KC_HOME,      KC_PGDN,      KC_PGUP,         KC_END,  KC_INS,  KC_NO,
   KC_NO, KC_NO,        KC_NO,        KC_NO,        KC_NO,        KC_NO,     KC_BSPC, KC_DEL,       KC_NO,        KC_NO
 ),
@@ -88,8 +92,14 @@ void dot_cap_each(tap_dance_state_t *state, void *user_data) {
     tap_code16(KC_SPC);
     clear_oneshot_mods();
     set_oneshot_mods(MOD_BIT(KC_LSFT));
-    state->finished = true;
   }
+    else {
+        tap_code16(KC_BSPC);
+        clear_oneshot_mods();
+        tap_code16(KC_DOT);
+        tap_code16(KC_DOT);
+        state->finished = true;
+    }
 }
 
 tap_dance_action_t tap_dance_actions[] = {
@@ -99,5 +109,23 @@ tap_dance_action_t tap_dance_actions[] = {
     NULL
   )
 };
+
+bool process_record_user(uint16_t keycode, keyrecord_t *record) {
+  uint8_t mods = get_mods() | get_oneshot_mods();
+  switch (keycode) {
+    case CW_CAPS:
+      if (record->event.pressed) {
+        if (mods & MOD_MASK_SHIFT) {
+          tap_code16(KC_CAPS);
+        } else {
+          caps_word_toggle();
+        }
+      }
+      return false;
+
+  }
+
+  return true;
+}
 
 
