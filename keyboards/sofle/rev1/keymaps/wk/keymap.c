@@ -109,3 +109,12 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 }
 
 
+// make thumb keys not part of any hand
+char chordal_hold_handedness(keypos_t key) {
+    if (key.row == MATRIX_ROWS - 1 || key.row == MATRIX_ROWS / 2 - 1) {
+        return '*';
+    }
+
+    return key.row < MATRIX_ROWS / 2 ? 'L' : 'R';
+}
+
