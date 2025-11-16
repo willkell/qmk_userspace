@@ -5,7 +5,7 @@
 enum sofle_layers {
     /* _M_XYZ = Mac Os, _W_XYZ = Win/Linux */
     _QWERTY,
-    _COLEMAK,
+    _GAME,
     _ENTHIUM,
     _NAV,
     _MOUSE,
@@ -20,7 +20,7 @@ enum custom_keycodes {
 };
 
 #define KC_QWERTY PDF(_QWERTY)
-#define KC_COLEMAK PDF(_COLEMAK)
+#define KC_GAME PDF(_COLEMAK)
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
@@ -33,12 +33,12 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   KC_NO, KC_NO,       LT(_MOUSE, KC_DEL) ,       LT(_NAV,      KC_SPC),   LT(_SYM, KC_ESC),OS_LSFT, MO(_NUM),        LT(_FUN, KC_BSPC), KC_NO, KC_NO
 ),
 
-[_COLEMAK] = LAYOUT(
-  KC_NO, KC_1,        KC_2,        KC_3,        KC_4,        KC_5,     KC_6,   KC_7,        KC_8,        KC_9,        KC_0,           KC_NO,
-  KC_TAB, KC_Q,         KC_W,         KC_F,         KC_P,         KC_B,      KC_J,    KC_L,         KC_U,         KC_Y,         KC_QUOT,         KC_BSPC,
-  KC_ESC, LGUI_T(KC_A), LALT_T(KC_R), LCTL_T(KC_S), LSFT_T(KC_T), KC_G,      KC_M,    LSFT_T(KC_N), LCTL_T(KC_E), LALT_T(KC_I), LGUI_T(KC_O),    KC_SCLN,
-  KC_NO, KC_Z,         KC_X,         KC_C,         KC_D,         KC_V,      KC_MUTE, KC_NO,        KC_K,         KC_H,         KC_COMM,KC_DOT,  KC_SLSH,KC_ENT ,
-  KC_NO, KC_NO,       LT(_MOUSE, KC_DEL) ,       LT(_NAV,      KC_SPC),   LT(_SYM, KC_ESC),OS_LSFT, MO(_NUM),        LT(_FUN, KC_BSPC), KC_NO, KC_NO
+[_GAME] = LAYOUT(
+  KC_ESC, KC_1,        KC_2,        KC_3,        KC_4,        KC_5,     KC_6,   KC_7,        KC_8,        KC_9,        KC_0,           KC_DEL,
+  KC_TAB, KC_Q,         KC_W,         KC_E,         KC_R,         KC_T,      KC_Y,    KC_U,         KC_I,         KC_O,         KC_P,            KC_BSPC,
+  KC_LSFT, KC_A, KC_S, KC_D,KC_F, KC_G,      KC_H,    KC_J, KC_K, KC_L, KC_QUOT, KC_SCLN,
+  KC_LCTL, KC_Z,         KC_X,         KC_C,         KC_V,         KC_B,      KC_MUTE, KC_NO,        KC_N,         KC_M,         KC_COMM,KC_DOT,  KC_SLSH, KC_ENT,
+  KC_LGUI, KC_LALT,       LT(_MOUSE, KC_DEL) ,       LT(_NAV,      KC_SPC),   LT(_SYM, KC_ESC),OS_LSFT, MO(_NUM),        LT(_FUN, KC_BSPC), KC_NO, KC_NO
 ),
 
 [_ENTHIUM] = LAYOUT(
@@ -51,7 +51,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 [_NUM] = LAYOUT(
   KC_NO, KC_NO,        KC_NO,        KC_NO,        KC_NO,        KC_NO,     KC_NO,   KC_NO,        KC_NO,        KC_NO,        KC_NO,           KC_NO,
-  KC_TAB, KC_ASTR,      KC_7,         KC_8,         KC_9,         KC_PLUS,   KC_NO,   DF(_QWERTY),  DF(_COLEMAK), KC_NO,        QK_BOOT,         KC_NO,
+  KC_TAB, KC_ASTR,      KC_7,         KC_8,         KC_9,         KC_PLUS,   KC_NO,   DF(_QWERTY),  DF(_GAME), KC_NO,        QK_BOOT,         KC_NO,
   KC_NO, KC_0,      KC_4,         KC_5,         KC_6,          KC_EQL,    KC_NO,   KC_LSFT,      KC_LCTL,      KC_LALT,      KC_LGUI,         KC_NO,
   KC_NO, KC_SLSH,       KC_1,         KC_2,         KC_3,       KC_MINS,   KC_NO,   KC_NO,        KC_NO,        KC_NO,        KC_NO,           KC_NO,   KC_NO,   KC_ENT,
   KC_NO, KC_NO,        KC_DOT,       KC_SPC,         KC_ESC,      KC_NO,     KC_NO,   KC_NO,        KC_NO,        KC_NO
@@ -67,7 +67,7 @@ KC_ESC, KC_LGUI,      KC_LALT,      KC_LCTL,      KC_LSFT,      KC_COLN,   KC_MI
 
 [_FUN] = LAYOUT(
   KC_NO, KC_NO,        KC_NO,        KC_NO,        KC_NO,        KC_NO,     KC_NO,   KC_NO,        KC_NO,        KC_NO,        KC_NO,           KC_NO,
-  KC_TAB, KC_F12,       KC_F7,        KC_F8,        KC_F9,        KC_PSCR,   KC_NO,   DF(_QWERTY),  DF(_COLEMAK), KC_NO,        QK_BOOT,         KC_NO,
+  KC_TAB, KC_F12,       KC_F7,        KC_F8,        KC_F9,        KC_PSCR,   KC_NO,   DF(_QWERTY),  DF(_GAME), KC_NO,        QK_BOOT,         KC_NO,
   KC_NO, KC_F11,       KC_F4,        KC_F5,        KC_F6,        KC_SCRL,   KC_VOLU, KC_LSFT,      KC_LCTL,      KC_LALT,      KC_LGUI,         KC_NO,
   KC_NO, KC_F10,       KC_F1,        KC_F2,        KC_F3,        KC_PAUS,   KC_NO,   KC_NO,        KC_VOLD,      KC_MUTE,      KC_MPLY,         KC_MPRV, KC_MNXT, KC_ENT,
   KC_NO, KC_NO,        KC_APP,       KC_SPC,         KC_ESC,       KC_NO, KC_NO,   KC_NO,        KC_NO,        KC_NO
@@ -75,7 +75,7 @@ KC_ESC, KC_LGUI,      KC_LALT,      KC_LCTL,      KC_LSFT,      KC_COLN,   KC_MI
 
 [_NAV] = LAYOUT(
   KC_NO, KC_NO,        KC_NO,        KC_NO,        KC_NO,        KC_NO,     KC_NO,   KC_NO,        KC_NO,        KC_NO,        KC_NO,           KC_NO,
-  KC_TAB, QK_BOOT,      DF(_ENTHIUM),        DF(_COLEMAK), DF(_QWERTY),  KC_NO,     C(KC_Y), C(KC_V),      C(KC_C),      C(KC_X),      C(KC_Z),         KC_NO,
+  KC_TAB, QK_BOOT,      DF(_ENTHIUM),        DF(_GAME), DF(_QWERTY),  KC_NO,     C(KC_Y), C(KC_V),      C(KC_C),      C(KC_X),      C(KC_Z),         KC_NO,
   KC_NO, KC_LGUI,      KC_LALT,      KC_LCTL,      KC_LSFT,      KC_NO,     KC_LEFT, KC_DOWN,      KC_UP,        KC_RGHT,      CW_CAPS,         KC_NO,
   KC_NO, C(KC_Z),        C(KC_X),        C(KC_C),        C(KC_V),        KC_NO,     KC_NO,   KC_NO,        KC_HOME,      KC_PGDN,      KC_PGUP,         KC_END,  KC_INS,  KC_ENT,
   KC_NO, KC_NO,        KC_NO,        KC_NO,        KC_NO,        KC_NO,     KC_BSPC, KC_DEL,       KC_NO,        KC_NO
@@ -83,7 +83,7 @@ KC_ESC, KC_LGUI,      KC_LALT,      KC_LCTL,      KC_LSFT,      KC_COLN,   KC_MI
 
 [_MOUSE] = LAYOUT(
   KC_NO, KC_NO,        KC_NO,        KC_NO,        KC_NO,        KC_NO,     KC_NO,   KC_NO,        KC_NO,        KC_NO,        KC_NO,           KC_NO,
-  KC_TAB, QK_BOOT,      KC_NO,        DF(_COLEMAK), DF(_QWERTY),  KC_NO,     C(KC_Y), C(KC_V),      C(KC_C),      C(KC_X),      C(KC_Z),         KC_NO,
+  KC_TAB, QK_BOOT,      DF(_ENTHIUM),        DF(_GAME), DF(_QWERTY),  KC_NO,     C(KC_Y), C(KC_V),      C(KC_C),      C(KC_X),      C(KC_Z),         KC_NO,
   KC_NO, KC_LGUI,      KC_LALT,      KC_LCTL,      KC_LSFT,      KC_NO,     MS_LEFT, MS_DOWN,      MS_UP,        MS_RGHT,      KC_NO,           KC_NO,
   KC_NO, KC_NO,        KC_NO,        KC_NO,        KC_NO,        KC_NO,     KC_NO,   KC_NO,        MS_WHLL,      MS_WHLD,      MS_WHLU,         MS_WHLR, KC_NO,   KC_ENT,
   KC_NO, KC_NO,        KC_NO,        KC_NO,        KC_NO,        MS_BTN2,   MS_BTN1, MS_BTN3,      KC_NO,        KC_NO
