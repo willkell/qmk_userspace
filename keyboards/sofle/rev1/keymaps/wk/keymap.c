@@ -76,7 +76,7 @@ KC_ESC, KC_LGUI,      KC_LALT,      KC_LCTL,      KC_LSFT,      KC_COLN,   KC_MI
 [_NAV] = LAYOUT(
   KC_NO, KC_NO,        KC_NO,        KC_NO,        KC_NO,        KC_NO,     KC_NO,   KC_NO,        KC_NO,        KC_NO,        KC_NO,           KC_NO,
   KC_TAB, QK_BOOT,      DF(_ENTHIUM),        DF(_GAME), DF(_QWERTY),  KC_NO,     C(KC_Y), C(KC_V),      C(KC_C),      C(KC_X),      C(KC_Z),         KC_NO,
-  KC_NO, KC_LGUI,      KC_LALT,      KC_LCTL,      KC_LSFT,      KC_NO,     KC_LEFT, KC_DOWN,      KC_UP,        KC_RGHT,      CW_CAPS,         KC_NO,
+  KC_NO, LGUI_T(KC_A), LALT_T(KC_S), LCTL_T(KC_D),      LSFT_T(KC_F),      KC_NO,     KC_LEFT, KC_DOWN,      KC_UP,        KC_RGHT,      CW_CAPS,         KC_NO,
   KC_NO, C(KC_Z),        C(KC_X),        C(KC_C),        C(KC_V),        KC_NO,     KC_NO,   KC_NO,        KC_HOME,      KC_PGDN,      KC_PGUP,         KC_END,  KC_INS,  KC_ENT,
   KC_NO, KC_NO,        KC_NO,        KC_NO,        KC_NO,        KC_NO,     KC_BSPC, KC_DEL,       KC_NO,        KC_NO
 ),
@@ -85,13 +85,14 @@ KC_ESC, KC_LGUI,      KC_LALT,      KC_LCTL,      KC_LSFT,      KC_COLN,   KC_MI
   KC_NO, KC_NO,        KC_NO,        KC_NO,        KC_NO,        KC_NO,     KC_NO,   KC_NO,        KC_NO,        KC_NO,        KC_NO,           KC_NO,
   KC_TAB, QK_BOOT,      DF(_ENTHIUM),        DF(_GAME), DF(_QWERTY),  KC_NO,     C(KC_Y), C(KC_V),      C(KC_C),      C(KC_X),      C(KC_Z),         KC_NO,
   KC_NO, KC_LGUI,      KC_LALT,      KC_LCTL,      KC_LSFT,      KC_NO,     MS_LEFT, MS_DOWN,      MS_UP,        MS_RGHT,      KC_NO,           KC_NO,
-  KC_NO, KC_NO,        KC_NO,        KC_NO,        KC_NO,        KC_NO,     KC_NO,   KC_NO,        MS_WHLL,      MS_WHLD,      MS_WHLU,         MS_WHLR, KC_NO,   KC_ENT,
+  KC_NO, LCS(KC_Z),    LCS(KC_X),    LCS(KC_C),    LCS(KC_V),    KC_NO,     KC_NO,   KC_NO,        MS_WHLL,      MS_WHLD,      MS_WHLU,         MS_WHLR, KC_NO,   KC_ENT,
   KC_NO, KC_NO,        KC_NO,        KC_NO,        KC_NO,        MS_BTN2,   MS_BTN1, MS_BTN3,      KC_NO,        KC_NO
 ),
 };
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
   uint8_t mods = get_mods() | get_oneshot_mods();
+    uint8_t current_layer = get_highest_layer(layer_state);
   switch (keycode) {
     case CW_CAPS:
       if (record->event.pressed) {
@@ -102,6 +103,26 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         }
       }
       return false;
+    case LGUI_T(KC_A):
+        if (current_layer == _NAV && record->tap.count && record->event.pressed) {
+                tap_code16(C(KC_A));
+                return false;
+        }
+    case LALT_T(KC_S):
+        if (current_layer == _NAV && record->tap.count && record->event.pressed) {
+                tap_code16(C(KC_S));
+                return false;
+        }
+    case LCTL_T(KC_D):
+        if (current_layer == _NAV && record->tap.count && record->event.pressed) {
+                tap_code16(C(KC_D));
+                return false;
+        }
+    case LSFT_T(KC_F):
+        if (current_layer == _NAV && record->tap.count && record->event.pressed) {
+                tap_code16(C(KC_F));
+                return false;
+        }
 
   }
 
