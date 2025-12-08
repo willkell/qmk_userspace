@@ -43,9 +43,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 [_ENTHIUM] = LAYOUT(
         KC_NO, KC_1,        KC_2,        KC_3,        KC_4,        KC_5,     KC_6,   KC_7,        KC_8,        KC_9,        KC_0,           KC_NO,
-  KC_TAB, KC_Z,         KC_Y,         KC_O,         KC_U,         KC_EQL,      KC_Q,    KC_L,         KC_D,         KC_P,         KC_X,         KC_BSPC,
-  KC_W, LGUI_T(KC_C), LALT_T(KC_I), LCTL_T(KC_A), LSFT_T(KC_E), KC_SCLN,      KC_K,    LSFT_T(KC_H), LCTL_T(KC_T), LALT_T(KC_N), LGUI_T(KC_S),    KC_F,
-  KC_ESC, KC_QUOT,         KC_MINS,         KC_COMM,         KC_DOT,         KC_SLSH,      KC_MUTE, KC_NO,        KC_J,         KC_M,         KC_G,         KC_B,  KC_V, KC_ENT,
+  KC_TAB, KC_Q,         KC_Y,         KC_O,         KC_U,         KC_EQL,      KC_X,    KC_L,         KC_D,         KC_W,         KC_Z,         KC_BSPC,
+  KC_B, LGUI_T(KC_C), LALT_T(KC_I), LCTL_T(KC_A), LSFT_T(KC_E), KC_MINS,      KC_K,    LSFT_T(KC_H), LCTL_T(KC_T), LALT_T(KC_N), LGUI_T(KC_S),    KC_F,
+  KC_ESC, KC_QUOT,         KC_COMM,         KC_DOT,         KC_SCLN,         KC_SLSH,      KC_MUTE, KC_NO,        KC_J,         KC_M,         KC_G,         KC_P,  KC_V, KC_ENT,
   KC_NO, KC_NO,       LT(_MOUSE, KC_DEL) ,       LT(_NAV,      KC_SPC),   LT(_SYM, KC_ESC),OS_LSFT, LT(_NUM,      KC_R),        LT(_FUN, KC_BSPC), KC_NO, KC_NO
     ),
 
