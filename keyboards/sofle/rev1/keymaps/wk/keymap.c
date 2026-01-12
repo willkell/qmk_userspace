@@ -28,7 +28,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   KC_TAB, KC_Q,         KC_Y,         KC_O,         KC_U,         KC_EQL,      KC_X,    KC_L,         KC_D,         KC_W,         KC_Z,         KC_BSPC,
   KC_B, LGUI_T(KC_C), LALT_T(KC_I), LCTL_T(KC_A), LSFT_T(KC_E), KC_MINS,      KC_K,    LSFT_T(KC_H), LCTL_T(KC_T), LALT_T(KC_N), LGUI_T(KC_S),    KC_F,
   KC_ESC, KC_QUOT,         KC_COMM,         KC_DOT,         KC_SCLN,         KC_SLSH,      KC_MUTE, KC_NO,        KC_J,         KC_M,         KC_G,         KC_P,  KC_V, KC_ENT,
-  KC_NO, KC_NO,       LT(_MOUSE, KC_DEL) ,       LT(_NAV,      KC_SPC),   LT(_SYM, KC_ESC),OS_LSFT, LT(_NUM,      KC_R),        LT(_FUN, KC_BSPC), KC_NO, KC_NO
+  KC_NO, KC_NO,       LT(_FUN, KC_DEL) ,       LT(_NUM,      KC_SPC),   OS_LSFT, LT(_SYM, KC_ESC), LT(_NAV,      KC_R),        LT(_MOUSE, KC_BSPC), KC_NO, KC_NO
     ),
 
 [_GAME] = LAYOUT(
@@ -73,7 +73,7 @@ KC_ESC, KC_LGUI,      KC_LALT,      KC_LCTL,      KC_LSFT,      KC_COLN,   KC_MI
 
 [_NAV] = LAYOUT(
   KC_NO, KC_NO,        KC_NO,        KC_NO,        KC_NO,        KC_NO,     KC_NO,   KC_NO,        KC_NO,        KC_NO,        KC_NO,           KC_NO,
-  KC_TAB, QK_BOOT,      DF(_ENTHIUM),        DF(_GAME), DF(_QWERTY),  KC_NO,     C(KC_Y), C(KC_V),      C(KC_C),      C(KC_X),      C(KC_Z),         KC_NO,
+  KC_TAB, QK_BOOT,      DF(_QWERTY),        DF(_GAME), DF(_ENTHIUM),  KC_NO,     C(KC_Y), C(KC_V),      C(KC_C),      C(KC_X),      C(KC_Z),         KC_NO,
   KC_NO, LGUI_T(KC_A), LALT_T(KC_S), LCTL_T(KC_D),      LSFT_T(KC_F),      KC_NO,     KC_LEFT, KC_DOWN,      KC_UP,        KC_RGHT,      CW_CAPS,         KC_NO,
   KC_NO, C(KC_Z),        C(KC_X),        C(KC_C),        C(KC_V),        KC_NO,     KC_NO,   KC_NO,        KC_HOME,      KC_PGDN,      KC_PGUP,         KC_END,  KC_INS,  KC_ENT,
   KC_NO, KC_NO,        KC_NO,        KC_NO,        KC_NO,        KC_NO,     KC_BSPC, KC_DEL,       KC_NO,        KC_NO
@@ -81,7 +81,7 @@ KC_ESC, KC_LGUI,      KC_LALT,      KC_LCTL,      KC_LSFT,      KC_COLN,   KC_MI
 
 [_MOUSE] = LAYOUT(
   KC_NO, KC_NO,        KC_NO,        KC_NO,        KC_NO,        KC_NO,     KC_NO,   KC_NO,        KC_NO,        KC_NO,        KC_NO,           KC_NO,
-  KC_TAB, QK_BOOT,      DF(_ENTHIUM),        DF(_GAME), DF(_QWERTY),  KC_NO,     C(KC_Y), C(KC_V),      C(KC_C),      C(KC_X),      C(KC_Z),         KC_NO,
+  KC_TAB, QK_BOOT,      DF(_QWERTY),        DF(_GAME), DF(_ENTHIUM),  KC_NO,     C(KC_Y), C(KC_V),      C(KC_C),      C(KC_X),      C(KC_Z),         KC_NO,
   KC_NO, KC_LGUI,      KC_LALT,      KC_LCTL,      KC_LSFT,      KC_NO,     MS_LEFT, MS_DOWN,      MS_UP,        MS_RGHT,      KC_NO,           KC_NO,
   KC_NO, LCS(KC_Z),    LCS(KC_X),    LCS(KC_C),    LCS(KC_V),    KC_NO,     KC_NO,   KC_NO,        MS_WHLL,      MS_WHLD,      MS_WHLU,         MS_WHLR, KC_NO,   KC_ENT,
   KC_NO, KC_NO,        KC_NO,        KC_NO,        KC_NO,        MS_BTN2,   MS_BTN1, MS_BTN3,      KC_NO,        KC_NO
