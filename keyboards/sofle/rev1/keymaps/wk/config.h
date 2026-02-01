@@ -23,3 +23,6 @@
 #define CHORDAL_HOLD
 #define FLOW_TAP_TERM 150
 #define QUICK_TAP_TERM 0
+
+#define AUTO_SHIFT_TIMEOUT 150
+#define RETRO_SHIFT 400
