@@ -25,4 +25,8 @@
 #define QUICK_TAP_TERM 0
 
 #define AUTO_SHIFT_TIMEOUT 175
-#define RETRO_SHIFT 300
+
+
+// auto shift
+#define NO_AUTO_SHIFT_ALPHA
+//
