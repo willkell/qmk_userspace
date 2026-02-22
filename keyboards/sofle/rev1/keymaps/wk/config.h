@@ -24,9 +24,6 @@
 #define FLOW_TAP_TERM 120
 #define QUICK_TAP_TERM 0
 
-#define AUTO_SHIFT_TIMEOUT 175
-
-
 // auto shift
 #define NO_AUTO_SHIFT_ALPHA
-//
+#define AUTO_SHIFT_TIMEOUT 175
