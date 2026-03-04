@@ -91,7 +91,6 @@ KC_ESC, KC_LGUI,      KC_LALT,      KC_LCTL,      KC_LSFT,      KC_COLN,   KC_MI
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
   uint8_t mods = get_mods() | get_oneshot_mods();
-    uint8_t current_layer = get_highest_layer(layer_state);
   switch (keycode) {
     case CW_CAPS:
       if (record->event.pressed) {
@@ -102,6 +101,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         }
       }
       return false;
+  }
   return true;
 }
 
@@ -114,8 +114,3 @@ char chordal_hold_handedness(keypos_t key) {
 
     return key.row < MATRIX_ROWS / 2 ? 'L' : 'R';
 }
-
-bool get_custom_auto_shifted_key(uint16_t keycode, keyrecord_t *record) {
-    return IS_RETRO(keycode);
-}
-
