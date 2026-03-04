@@ -26,7 +26,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 [_ENTHIUM] = LAYOUT(
         KC_NO, KC_1,        KC_2,        KC_3,        KC_4,        KC_5,     KC_6,   KC_7,        KC_8,        KC_9,        KC_0,           KC_NO,
   KC_TAB, KC_Q,         KC_Y,         KC_O,         KC_U,         KC_EQL,      KC_X,    KC_L,         KC_D,         KC_W,         KC_Z,         KC_BSPC,
-  KC_B, LGUI_T(KC_C), LALT_T(KC_I), LCTL_T(KC_A), LSFT_T(KC_E), KC_MINS,      KC_K,    LSFT_T(KC_H), LCTL_T(KC_T), LALT_T(KC_N), LGUI_T(KC_S),    KC_F,
+  KC_B, LGUI_T(KC_C), LALT_T(KC_I), LSFT_T(KC_A), LCTL_T(KC_E), KC_MINS,      KC_K,    LCTL_T(KC_H), LSFT_T(KC_T), LALT_T(KC_N), LGUI_T(KC_S),    KC_F,
   KC_ESC, KC_QUOT,         KC_COMM,         KC_DOT,         KC_SCLN,         KC_SLSH,      KC_MUTE, KC_NO,        KC_J,         KC_M,         KC_G,         KC_P,  KC_V, KC_ENT,
   C(KC_C),        C(KC_V),       LT(_FUN, KC_DEL) ,       KC_SPC,   OS_LSFT, OSL(_NUM_SYM), LT(_NAV,      KC_R),         KC_BSPC, KC_NO, KC_NO
     ),
@@ -42,7 +42,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 [_QWERTY] = LAYOUT(
   KC_NO, KC_1,        KC_2,        KC_3,        KC_4,        KC_5,     KC_6,   KC_7,        KC_8,        KC_9,        KC_0,           KC_NO,
   KC_TAB, KC_Q,         KC_W,         KC_E,         KC_R,         KC_T,      KC_Y,    KC_U,         KC_I,         KC_O,         KC_P,            KC_BSPC,
-  KC_ESC, LGUI_T(KC_A), LALT_T(KC_S), LCTL_T(KC_D), LSFT_T(KC_F), KC_G,      KC_H,    LSFT_T(KC_J), LCTL_T(KC_K), LALT_T(KC_L), LGUI_T(KC_QUOT), KC_SCLN,
+  KC_ESC, LGUI_T(KC_A), LALT_T(KC_S), LSFT_T(KC_D), LCTL_T(KC_F), KC_G,      KC_H,    LCTL_T(KC_J), LSFT_T(KC_K), LALT_T(KC_L), LGUI_T(KC_QUOT), KC_SCLN,
   KC_NO, KC_Z,         KC_X,         KC_C,         KC_V,         KC_B,      KC_MUTE, KC_NO,        KC_N,         KC_M,         KC_COMM,KC_DOT,  KC_SLSH, KC_ENT,
   C(KC_C),        C(KC_V),       LT(_FUN, KC_DEL) ,       KC_SPC,   OS_LSFT, OSL(_NUM_SYM), MO(_NAV),        KC_BSPC, KC_NO, KC_NO
 ),
@@ -58,7 +58,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 [_NUM_SYM] = LAYOUT(
   KC_NO, KC_NO,        KC_NO,        KC_NO,        KC_NO,        KC_NO,     KC_NO,   KC_NO,        KC_NO,        KC_NO,        KC_NO,           KC_NO,
   KC_TAB, KC_GRV,      KC_TILD,       KC_LCBR,       KC_RCBR,       KC_PIPE,   KC_DLR, KC_7, KC_8, KC_9,        KC_NO,         KC_NO,
-  KC_NO, KC_EXLM,      KC_AT,      KC_LPRN,      KC_RPRN,      KC_HASH,    KC_PERC, RSFT_T(KC_4), RCTL_T(KC_5), RALT_T(KC_6), RGUI_T(KC_0),         KC_NO,
+  KC_NO, KC_EXLM,      KC_AT,      KC_LPRN,      KC_RPRN,      KC_HASH,    KC_PERC, RCTL_T(KC_4), RSFT_T(KC_5), RALT_T(KC_6), RGUI_T(KC_0),         KC_NO,
   KC_ESC, KC_BSLS,        KC_AMPR,         KC_LBRC,      KC_RBRC,       KC_ASTR,   KC_NO,   KC_NO, KC_CIRC, KC_1, KC_2, KC_3, KC_DOT,   KC_ENT,
   KC_NO,    KC_NO,        KC_NO,       KC_SPC,         KC_NO,      KC_NO,     KC_NO,   KC_NO,        KC_NO,        KC_NO
 ),
@@ -83,7 +83,7 @@ KC_ESC, KC_LGUI,      KC_LALT,      KC_LCTL,      KC_LSFT,      KC_COLN,   KC_MI
 [_NAV] = LAYOUT(
   KC_NO, KC_NO,        KC_NO,        KC_NO,        KC_NO,        KC_NO,     KC_NO,   KC_NO,        KC_NO,        KC_NO,        KC_NO,           KC_NO,
   KC_TAB, QK_BOOT,      DF(_QWERTY),        DF(_GAME), DF(_ENTHIUM),  KC_NO,     C(KC_Y), C(KC_V),      C(KC_C),      C(KC_X),      C(KC_Z),         KC_NO,
-  KC_NO, LGUI_T(KC_A), LALT_T(KC_S), LCTL_T(KC_D),      LSFT_T(KC_F),      KC_NO,     KC_LEFT, KC_DOWN,      KC_UP,        KC_RGHT,      CW_CAPS,         KC_NO,
+  KC_NO, LGUI_T(KC_A), LALT_T(KC_S), LSFT_T(KC_D),      LCTL_T(KC_F),      KC_NO,     KC_LEFT, KC_DOWN,      KC_UP,        KC_RGHT,      CW_CAPS,         KC_NO,
   KC_NO, C(KC_Z),        C(KC_X),        C(KC_C),        C(KC_V),        KC_NO,     KC_NO,   KC_NO,        KC_HOME,      KC_PGDN,      KC_PGUP,         KC_END,  KC_INS,  KC_ENT,
   KC_NO, KC_NO,        KC_NO,        KC_NO,        KC_NO,        KC_NO,     KC_BSPC, KC_DEL,       KC_NO,        KC_NO
 ),
@@ -102,29 +102,6 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         }
       }
       return false;
-    case LGUI_T(KC_A):
-        if (current_layer == _NAV && record->tap.count && record->event.pressed) {
-                tap_code16(C(KC_A));
-                return false;
-        }
-    case LALT_T(KC_S):
-        if (current_layer == _NAV && record->tap.count && record->event.pressed) {
-                tap_code16(C(KC_S));
-                return false;
-        }
-    case LCTL_T(KC_D):
-        if (current_layer == _NAV && record->tap.count && record->event.pressed) {
-                tap_code16(C(KC_D));
-                return false;
-        }
-    case LSFT_T(KC_F):
-        if (current_layer == _NAV && record->tap.count && record->event.pressed) {
-                tap_code16(C(KC_F));
-                return false;
-        }
-
-  }
-
   return true;
 }
 
