@@ -15,16 +15,29 @@ enum sofle_layers {
 };
 
 
-enum custom_keycodes {
-    CW_CAPS =  SAFE_RANGE,
+enum tap_dance_codes {
+    TD_IA_ESC,
 };
 
-const uint16_t PROGMEM copy_combo[]  = {KC_Q, KC_Y, COMBO_END};
-const uint16_t PROGMEM paste_combo[] = {KC_Y, KC_O, COMBO_END};
+enum custom_keycodes {
+    CW_CAPS =  SAFE_RANGE,
+    IA_ESC,
+};
+
+const uint16_t PROGMEM tab_combo[]  = {KC_Q, KC_Y, COMBO_END};
+const uint16_t PROGMEM copy_combo[]  = { KC_COMM, KC_DOT, COMBO_END};
+const uint16_t PROGMEM shift_copy_combo[]  = { KC_QUOT, KC_COMM, KC_DOT, COMBO_END};
+const uint16_t PROGMEM paste_combo[]  = { KC_DOT, KC_SCLN, COMBO_END};
+const uint16_t PROGMEM shift_paste_combo[]  = { KC_COMM, KC_DOT, KC_SCLN, COMBO_END};
+const uint16_t PROGMEM esc_combo[]  = { LALT_T(KC_I), LSFT_T(KC_A), COMBO_END};
 
 combo_t key_combos[] = {
+    COMBO(tab_combo,  KC_TAB),
     COMBO(copy_combo,  C(KC_C)),
-    COMBO(paste_combo, C(KC_V)),
+    COMBO(shift_copy_combo,  LCS(KC_C)),
+    COMBO(paste_combo,  C(KC_V)),
+    COMBO(shift_paste_combo,  LCS(KC_V)),
+    COMBO(esc_combo, LSA_T(KC_ESC))
 };
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
@@ -114,8 +127,7 @@ char chordal_hold_handedness(keypos_t key) {
     return key.row < MATRIX_ROWS / 2 ? 'L' : 'R';
 }
 
-bool combo_should_trigger(uint16_t combo_index, combo_t *combo,
-                          uint16_t keycode, keyrecord_t *record) {
+bool combo_should_trigger(uint16_t combo_index, combo_t *combo, uint16_t keycode, keyrecord_t *record) {
       // Disable the combo if it's pressed within the Flow Tap term.
       return !within_flow_tap_term(keycode, record);
 }

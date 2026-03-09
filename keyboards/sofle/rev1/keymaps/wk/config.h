@@ -12,8 +12,4 @@
 #define FLOW_TAP_TERM 175
 #define QUICK_TAP_TERM 120
 
-// auto shift
-#define NO_AUTO_SHIFT_ALPHA
-#define AUTO_SHIFT_TIMEOUT 175
-
 #define COMBO_SHOULD_TRIGGER
