@@ -14,17 +14,11 @@ enum sofle_layers {
     _NUM_SYM,
 };
 
-
-enum tap_dance_codes {
-    TD_IA_ESC,
-};
-
-enum custom_keycodes {
+num custom_keycodes {
     CW_CAPS =  SAFE_RANGE,
-    IA_ESC,
 };
 
-const uint16_t PROGMEM tab_combo[]  = {KC_Q, KC_Y, COMBO_END};
+const uint16_t PROGMEM tab_combo[]  = {KC_O, KC_U, COMBO_END};
 const uint16_t PROGMEM copy_combo[]  = { KC_COMM, KC_DOT, COMBO_END};
 const uint16_t PROGMEM shift_copy_combo[]  = { KC_QUOT, KC_COMM, KC_DOT, COMBO_END};
 const uint16_t PROGMEM paste_combo[]  = { KC_DOT, KC_SCLN, COMBO_END};
