@@ -113,3 +113,9 @@ char chordal_hold_handedness(keypos_t key) {
 
     return key.row < MATRIX_ROWS / 2 ? 'L' : 'R';
 }
+
+bool combo_should_trigger(uint16_t combo_index, combo_t *combo,
+                          uint16_t keycode, keyrecord_t *record) {
+      // Disable the combo if it's pressed within the Flow Tap term.
+      return !within_flow_tap_term(keycode, record);
+}
