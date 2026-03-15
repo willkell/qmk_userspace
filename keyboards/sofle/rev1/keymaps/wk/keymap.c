@@ -24,6 +24,7 @@ const uint16_t PROGMEM shift_copy_combo[]  = { KC_QUOT, KC_COMM, KC_DOT, COMBO_E
 const uint16_t PROGMEM paste_combo[]  = { KC_DOT, KC_SCLN, COMBO_END};
 const uint16_t PROGMEM shift_paste_combo[]  = { KC_COMM, KC_DOT, KC_SCLN, COMBO_END};
 const uint16_t PROGMEM esc_combo[]  = { LALT_T(KC_I), LSFT_T(KC_A), COMBO_END};
+const uint16_t PROGMEM oss_combo[]  = { KC_QUOT, KC_COMM, COMBO_END};
 
 combo_t key_combos[] = {
     COMBO(tab_combo,  KC_TAB),
@@ -31,7 +32,8 @@ combo_t key_combos[] = {
     COMBO(shift_copy_combo,  LCS(KC_C)),
     COMBO(paste_combo,  C(KC_V)),
     COMBO(shift_paste_combo,  LCS(KC_V)),
-    COMBO(esc_combo, LSA_T(KC_ESC))
+    COMBO(esc_combo, LSA_T(KC_ESC)),
+    COMBO(oss_combo, OS_LSFT)
 };
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
