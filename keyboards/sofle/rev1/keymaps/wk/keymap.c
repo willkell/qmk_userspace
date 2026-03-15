@@ -43,8 +43,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         KC_NO, KC_1,        KC_2,        KC_3,        KC_4,        KC_5,     KC_6,   KC_7,        KC_8,        KC_9,        KC_0,           KC_NO,
   KC_TAB, KC_Q,         KC_Y,         KC_O,         KC_U,         KC_EQL,      KC_X,    KC_L,         KC_D,         KC_W,         KC_Z,         KC_BSPC,
   KC_B, LGUI_T(KC_C), LALT_T(KC_I), LSFT_T(KC_A), LCTL_T(KC_E), KC_MINS,      KC_K,    RCTL_T(KC_H), RSFT_T(KC_T), RALT_T(KC_N), RGUI_T(KC_S),    KC_F,
-  KC_ESC, KC_QUOT,         KC_COMM,         KC_DOT,         KC_SCLN,         KC_SLSH,      KC_MUTE, KC_NO,        KC_J,         KC_M,         KC_G,         KC_P,  KC_V, KC_ENT,
-  KC_NO,          KC_NO,         LT(_FUN, KC_DEL),        KC_SPC,    OSL(_NUM_SYM), OS_LSFT,LT(_NAV,      KC_R),         KC_BSPC, KC_NO, KC_NO
+  OS_LSFT, KC_QUOT,         KC_COMM,         KC_DOT,         KC_SCLN,         KC_SLSH,      KC_MUTE, KC_NO,        KC_J,         KC_M,         KC_G,         KC_P,  KC_V, KC_ENT,
+  KC_NO,          KC_NO,         LT(_FUN, KC_DEL),        KC_SPC,    OSL(_NUM_SYM), KC_ESC,LT(_NAV,      KC_R),         KC_BSPC, KC_NO, KC_NO
     ),
 
 [_GAME] = LAYOUT(
@@ -68,7 +68,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   KC_TAB, KC_GRV,      KC_TILD,       KC_LCBR,       KC_RCBR,       KC_PIPE,   KC_DLR, KC_7, KC_8, KC_9,        KC_NO,         KC_NO,
   KC_NO, KC_EXLM,      KC_AT,      KC_LPRN,      KC_RPRN,      KC_HASH,    KC_PERC, RCTL_T(KC_4), RSFT_T(KC_5), RALT_T(KC_6), RGUI_T(KC_0),         KC_NO,
   KC_ESC, KC_BSLS,        KC_AMPR,         KC_LBRC,      KC_RBRC,       KC_ASTR,   KC_NO,   KC_NO, KC_CIRC, KC_1, KC_2, KC_3, KC_DOT,   KC_ENT,
-  KC_NO,    KC_NO,        KC_NO,       KC_SPC,         KC_NO,      KC_NO,     KC_NO,   KC_NO,        KC_NO,        KC_NO
+  KC_NO,    KC_NO,        KC_NO,       KC_SPC,         KC_NO,      KC_SPC,     KC_0,   KC_DOT,        KC_NO,        KC_NO
 ),
 
 
