@@ -14,7 +14,7 @@ enum sofle_layers {
     _NUM_SYM,
 };
 
-num custom_keycodes {
+enum custom_keycodes {
     CW_CAPS =  SAFE_RANGE,
 };
 
@@ -89,7 +89,7 @@ KC_ESC, KC_LGUI,      KC_LALT,      KC_LCTL,      KC_LSFT,      KC_COLN,   KC_MI
 [_NAV] = LAYOUT(
   KC_NO, KC_NO,        KC_NO,        KC_NO,        KC_NO,        KC_NO,     KC_NO,   KC_NO,        KC_NO,        KC_NO,        KC_NO,           KC_NO,
   KC_TAB, QK_BOOT,      DF(_QWERTY),        DF(_GAME), DF(_ENTHIUM),  KC_NO,     C(KC_Y), C(KC_V),      C(KC_C),      C(KC_X),      C(KC_Z),         KC_NO,
-  KC_NO, LGUI_T(KC_A), LALT_T(KC_S), LSFT_T(KC_D),      LCTL_T(KC_F),      KC_NO,     KC_LEFT, KC_DOWN,      KC_UP,        KC_RGHT,      CW_CAPS,         KC_NO,
+  KC_NO, LGUI_T(KC_A), LALT_T(KC_S), LSFT_T(KC_D),      LCTL_T(KC_F),      KC_NO,   CW_CAPS,   KC_LEFT, KC_DOWN,      KC_UP,        KC_RGHT,              KC_NO,
   KC_NO, C(KC_Z),        C(KC_X),        C(KC_C),        C(KC_V),        KC_NO,     KC_NO,   KC_NO,        KC_HOME,      KC_PGDN,      KC_PGUP,         KC_END,  KC_INS,  KC_ENT,
   KC_NO, KC_NO,        KC_NO,        KC_NO,        KC_NO,        KC_NO,     KC_BSPC, KC_DEL,       KC_NO,        KC_NO
 ),
