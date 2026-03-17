@@ -63,6 +63,14 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   KC_NO,          KC_NO,         LT(_FUN, KC_DEL),        KC_SPC,   OS_LSFT, OSL(_NUM_SYM), MO(_NAV),        KC_BSPC, KC_NO, KC_NO
 ),
 
+[_NUM] = LAYOUT(
+  KC_NO, KC_NO,        KC_NO,        KC_NO,        KC_NO,        KC_NO,     KC_NO,   KC_NO,        KC_NO,        KC_NO,        KC_NO,           KC_NO,
+  KC_TAB, KC_ASTR,      KC_7,         KC_8,         KC_9,         KC_PLUS,   KC_NO,   DF(_QWERTY),  DF(_GAME), KC_NO,        QK_BOOT,         KC_NO,
+  KC_NO, KC_0,      KC_4,         KC_5,         KC_6,          KC_EQL,    KC_NO,   KC_LSFT,      KC_LCTL,      KC_LALT,      KC_LGUI,         KC_NO,
+  KC_NO, KC_SLSH,       KC_1,         KC_2,         KC_3,       KC_MINS,   KC_NO,   KC_NO,        KC_NO,        KC_NO,        KC_NO,           KC_NO,   KC_NO,   KC_ENT,
+  LCS(KC_C),    LCS(KC_V),        KC_DOT,       KC_SPC,         KC_ESC,      KC_NO,     KC_NO,   KC_NO,        KC_NO,        KC_NO
+),
+
 [_NUM_SYM] = LAYOUT(
   KC_NO, KC_NO,        KC_NO,        KC_NO,        KC_NO,        KC_NO,     KC_NO,   KC_NO,        KC_NO,        KC_NO,        KC_NO,           KC_NO,
   KC_TAB, KC_GRV,      KC_TILD,       KC_LCBR,       KC_RCBR,       KC_PIPE,   KC_DLR, KC_7, KC_8, KC_9,        KC_NO,         KC_NO,
