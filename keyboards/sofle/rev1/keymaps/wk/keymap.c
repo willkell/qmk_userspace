@@ -18,22 +18,20 @@ enum custom_keycodes {
     CW_CAPS =  SAFE_RANGE,
 };
 
-const uint16_t PROGMEM tab_combo[]  = {KC_O, KC_U, COMBO_END};
 const uint16_t PROGMEM copy_combo[]  = { KC_COMM, KC_DOT, COMBO_END};
 const uint16_t PROGMEM shift_copy_combo[]  = { KC_QUOT, KC_COMM, KC_DOT, COMBO_END};
 const uint16_t PROGMEM paste_combo[]  = { KC_DOT, KC_SCLN, COMBO_END};
 const uint16_t PROGMEM shift_paste_combo[]  = { KC_COMM, KC_DOT, KC_SCLN, COMBO_END};
-const uint16_t PROGMEM esc_combo[]  = { LALT_T(KC_I), LSFT_T(KC_A), COMBO_END};
 const uint16_t PROGMEM oss_combo[]  = { KC_QUOT, KC_COMM, COMBO_END};
+const uint16_t PROGMEM ossr_combo[]  = { KC_P, KC_V, COMBO_END};
 
 combo_t key_combos[] = {
-    COMBO(tab_combo,  KC_TAB),
     COMBO(copy_combo,  C(KC_C)),
     COMBO(shift_copy_combo,  LCS(KC_C)),
     COMBO(paste_combo,  C(KC_V)),
     COMBO(shift_paste_combo,  LCS(KC_V)),
-    COMBO(esc_combo, LSA_T(KC_ESC)),
-    COMBO(oss_combo, OS_LSFT)
+    COMBO(oss_combo, OS_LSFT),
+    COMBO(ossr_combo, OS_LSFT)
 };
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
@@ -43,8 +41,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         KC_NO, KC_1,        KC_2,        KC_3,        KC_4,        KC_5,     KC_6,   KC_7,        KC_8,        KC_9,        KC_0,           KC_NO,
   KC_TAB, KC_Q,         KC_Y,         KC_O,         KC_U,         KC_EQL,      KC_X,    KC_L,         KC_D,         KC_W,         KC_Z,         KC_BSPC,
   KC_B, LGUI_T(KC_C), LALT_T(KC_I), LSFT_T(KC_A), LCTL_T(KC_E), KC_MINS,      KC_K,    RCTL_T(KC_H), RSFT_T(KC_T), RALT_T(KC_N), RGUI_T(KC_S),    KC_F,
-  OS_LSFT, KC_QUOT,         KC_COMM,         KC_DOT,         KC_SCLN,         KC_SLSH,      KC_MUTE, KC_NO,        KC_J,         KC_M,         KC_G,         KC_P,  KC_V, KC_ENT,
-  KC_NO,          KC_NO,         LT(_FUN, KC_DEL),        KC_SPC,    OSL(_NUM_SYM), KC_ESC,LT(_NAV,      KC_R),         KC_BSPC, KC_NO, KC_NO
+  OS_LSFT, KC_QUOT,         KC_COMM,         KC_DOT,         KC_SCLN,         KC_SLSH,      KC_MUTE, KC_NO,        KC_J,         KC_M,         KC_G,         KC_P,  KC_V, OS_RSFT,
+        KC_NO, KC_NO, LT(_FUN, KC_DEL), LT(_NAV, KC_SPC), LT(_SYM, KC_ESC),  KC_ENT,LT(_NUM, KC_R), KC_BSPC, KC_NO, KC_NO
     ),
 
 [_GAME] = LAYOUT(
@@ -71,21 +69,12 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   LCS(KC_C),    LCS(KC_V),        KC_DOT,       KC_SPC,         KC_ESC,      KC_NO,     KC_NO,   KC_NO,        KC_NO,        KC_NO
 ),
 
-[_NUM_SYM] = LAYOUT(
-  KC_NO, KC_NO,        KC_NO,        KC_NO,        KC_NO,        KC_NO,     KC_NO,   KC_NO,        KC_NO,        KC_NO,        KC_NO,           KC_NO,
-  KC_TAB, KC_GRV,      KC_TILD,       KC_LCBR,       KC_RCBR,       KC_PIPE,   KC_DLR, KC_7, KC_8, KC_9,        KC_NO,         KC_NO,
-  KC_NO, KC_EXLM,      KC_AT,      KC_LPRN,      KC_RPRN,      KC_HASH,    KC_PERC, RCTL_T(KC_4), RSFT_T(KC_5), RALT_T(KC_6), RGUI_T(KC_0),         KC_NO,
-  KC_ESC, KC_BSLS,        KC_AMPR,         KC_LBRC,      KC_RBRC,       KC_ASTR,   KC_NO,   KC_NO, KC_CIRC, KC_1, KC_2, KC_3, KC_DOT,   KC_ENT,
-  KC_NO,    KC_NO,        KC_NO,       KC_SPC,         KC_NO,      KC_SPC,     KC_0,   KC_DOT,        KC_NO,        KC_NO
-),
-
-
 [_SYM] = LAYOUT(
   KC_NO, KC_NO,        KC_NO,        KC_NO,        KC_NO,        KC_NO,     KC_NO,   KC_NO,        KC_NO,        KC_NO,        KC_NO,           KC_NO,
-  KC_TAB, KC_GRV,      KC_TILD,        KC_EXLM,      KC_AT,       KC_PLUS,   KC_PIPE, KC_LCBR,       KC_RCBR,       KC_CIRC,      KC_DLR,         KC_NO,
-KC_ESC, KC_LGUI,      KC_LALT,      KC_LCTL,      KC_LSFT,      KC_COLN,   KC_MINS, KC_LPRN,      KC_RPRN,      KC_UNDS,      KC_EQL,         KC_SCLN,
-  KC_NO, KC_NO,        KC_NO,        KC_HASH,      KC_PERC,       KC_BSLS,   KC_NO,   KC_NO,        KC_ASTR,      KC_LBRC,      KC_RBRC,         KC_AMPR, KC_QUES, KC_ENT,
-  KC_NO, KC_NO,        KC_DOT,       KC_SPC,         KC_ESC,      KC_NO,     KC_NO,   KC_NO,        KC_NO,        KC_NO
+  KC_TAB, KC_GRV,      KC_TILD,       KC_LCBR,       KC_RCBR,       KC_PIPE,   KC_DLR, KC_NO, KC_NO, KC_NO,        KC_NO,         KC_NO,
+  KC_NO, KC_EXLM,      KC_AT,      KC_LPRN,      KC_RPRN,      KC_HASH,    KC_PERC, KC_RCTL, KC_RSFT, KC_RALT, KC_RGUI,         KC_NO,
+  KC_ESC, KC_BSLS,        KC_AMPR,         KC_LBRC,      KC_RBRC,       KC_ASTR,   KC_NO,   KC_NO, KC_CIRC, KC_NO, KC_NO, KC_NO, KC_NO,   KC_ENT,
+  KC_NO,    KC_NO,        KC_NO,       KC_SPC,         KC_NO,      KC_SPC,     KC_NO,   KC_NO,        KC_NO,        KC_NO
 ),
 
 [_FUN] = LAYOUT(
