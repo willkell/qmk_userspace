@@ -40,8 +40,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     OS_LSFT, KC_QUOT,      KC_COMM,      KC_DOT,        KC_SCLN,       KC_SLSH,
     KC_J,    KC_M,         KC_G,         KC_P,          KC_V,          OS_RSFT,
     // thumbs
-    LT(_FUN, KC_DEL), LT(_NAV, KC_SPC), LT(_SYM, KC_ESC),
-    KC_ENT,           LT(_NUM, KC_R),   KC_BSPC
+    LT(_FUN, KC_DEL), LT(_NAV, KC_ESC), LT(_SYM, KC_SPC),
+    KC_R,           LT(_NUM, KC_ENT),   KC_BSPC
 ),
 
 [_GAME] = LAYOUT_wk(
@@ -74,8 +74,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_NO,   KC_Z, KC_X, KC_C, KC_V, KC_B,
     KC_N,    KC_M, KC_COMM, KC_DOT, KC_SLSH, KC_ENT,
     // thumbs
-    LT(_FUN, KC_DEL), LT(_NAV, KC_SPC), LT(_SYM, KC_ESC),
-    KC_ENT,           LT(_NUM, KC_R),   KC_BSPC
+    LT(_FUN, KC_DEL), LT(_NAV, KC_ESC), LT(_SYM, KC_SPC),
+    KC_R,           LT(_NUM, KC_ENT),   KC_BSPC
 ),
 
 [_NAV] = LAYOUT_wk(
