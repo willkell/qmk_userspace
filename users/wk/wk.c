@@ -58,7 +58,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_N,    KC_M, KC_COMM, KC_DOT, KC_SLSH, KC_ENT,
     // thumbs
     LT(_NAV, KC_DEL), KC_SPC,    LT(_SYM, KC_ESC),
-    OSL(_NUM_SYM),    MO(_NAV),  KC_BSPC
+    OSL(_NUM),    MO(_NAV),  KC_BSPC
 ),
 
 [_QWERTY] = LAYOUT_wk(
@@ -74,8 +74,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_NO,   KC_Z, KC_X, KC_C, KC_V, KC_B,
     KC_N,    KC_M, KC_COMM, KC_DOT, KC_SLSH, KC_ENT,
     // thumbs
-    LT(_FUN, KC_DEL), KC_SPC,    OS_LSFT,
-    OSL(_NUM_SYM),    MO(_NAV),  KC_BSPC
+    LT(_FUN, KC_DEL), LT(_NAV, KC_SPC), LT(_SYM, KC_ESC),
+    KC_ENT,           LT(_NUM, KC_R),   KC_BSPC
 ),
 
 [_NAV] = LAYOUT_wk(
@@ -89,7 +89,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     CW_CAPS, KC_LEFT,      KC_DOWN,      KC_UP,         KC_RGHT,       KC_NO,
     // bottom
     KC_NO,   C(KC_Z),      C(KC_X),      C(KC_C),       C(KC_V),       KC_NO,
-    KC_HOME, KC_PGDN,      KC_PGUP,      KC_END,        KC_INS,        KC_ENT,
+    KC_INS,  KC_HOME,      KC_PGDN,      KC_PGUP,       KC_END,        KC_ENT,
     // thumbs
     KC_NO, KC_NO, KC_NO,
     KC_NO, KC_BSPC, KC_DEL
