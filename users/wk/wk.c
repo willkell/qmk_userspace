@@ -83,9 +83,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,  KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,
     // upper
     KC_TAB,  QK_BOOT,      DF(_QWERTY),  DF(_GAME),     DF(_ENTHIUM),  KC_NO,
-    C(KC_Y), C(KC_V),      C(KC_C),      C(KC_X),       C(KC_Z),       KC_NO,
+    C(KC_Y), C(KC_LEFT),   C(KC_C),      C(KC_V),       C(KC_RGHT),    KC_NO,
     // home
-    KC_NO,   LGUI_T(KC_A), LALT_T(KC_S), LSFT_T(KC_D),  LCTL_T(KC_F),  KC_NO,
+    KC_NO,   KC_LSFT,      KC_LCTL,      KC_LALT,       KC_LGUI,       KC_NO,
     CW_CAPS, KC_LEFT,      KC_DOWN,      KC_UP,         KC_RGHT,       KC_NO,
     // bottom
     KC_NO,   C(KC_Z),      C(KC_X),      C(KC_C),       C(KC_V),       KC_NO,
@@ -109,7 +109,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_CIRC, KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_ENT,
     // thumbs
     KC_NO, KC_SPC, KC_NO,
-    KC_SPC, KC_NO, KC_NO
+    KC_SPC, KC_NO, KC_BSPC
 ),
 
 [_NUM] = LAYOUT_wk(
