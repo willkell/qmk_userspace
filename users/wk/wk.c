@@ -17,12 +17,16 @@ const uint16_t PROGMEM copy_combo[]        = { KC_COMM, KC_DOT,           COMBO_
 const uint16_t PROGMEM shift_copy_combo[]  = { KC_QUOT, KC_COMM, KC_DOT,  COMBO_END };
 const uint16_t PROGMEM paste_combo[]       = { KC_DOT,  KC_SCLN,          COMBO_END };
 const uint16_t PROGMEM shift_paste_combo[] = { KC_COMM, KC_DOT,  KC_SCLN, COMBO_END };
+const uint16_t PROGMEM cut_combo[] = { KC_QUOT, KC_COMM, COMBO_END };
+const uint16_t PROGMEM undo_combo[] = { KC_SCLN, KC_SLSH, COMBO_END };
 
 combo_t key_combos[] = {
     COMBO(copy_combo,        C(KC_C)),
     COMBO(shift_copy_combo,  LCS(KC_C)),
     COMBO(paste_combo,       C(KC_V)),
     COMBO(shift_paste_combo, LCS(KC_V)),
+    COMBO(cut_combo, C(KC_X)),
+    COMBO(undo_combo, C(KC_Z)),
 };
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
