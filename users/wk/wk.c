@@ -85,7 +85,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_TAB,  QK_BOOT,      DF(_QWERTY),  DF(_GAME),     DF(_ENTHIUM),  KC_NO,
     C(KC_Y), C(KC_LEFT),   C(KC_C),      C(KC_V),       C(KC_RGHT),    KC_NO,
     // home
-    KC_NO,   KC_LSFT,      KC_LCTL,      KC_LALT,       KC_LGUI,       KC_NO,
+    KC_NO,   KC_LGUI,      KC_LALT,      KC_LSFT,       KC_LCTL,       KC_NO,
     CW_CAPS, KC_LEFT,      KC_DOWN,      KC_UP,         KC_RGHT,       KC_NO,
     // bottom
     KC_NO,   C(KC_Z),      C(KC_X),      C(KC_C),       C(KC_V),       KC_NO,
