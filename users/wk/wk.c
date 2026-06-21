@@ -99,14 +99,14 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     // number row
     KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,  KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,
     // upper
-    KC_TAB,  KC_GRV,  KC_TILD, KC_LCBR, KC_RCBR, KC_PIPE,
-    KC_DLR,  KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,
+    KC_DLR,  KC_GRV,  KC_TILD, KC_LCBR, KC_RCBR, KC_PIPE,
+    KC_NO,  C(KC_H),   C(KC_J),   C(KC_K),   C(KC_L),   KC_NO,
     // home
-    KC_NO,   KC_EXLM, KC_AT,   KC_LPRN, KC_RPRN, KC_HASH,
-    KC_PERC, KC_RCTL, KC_RSFT, KC_RALT, KC_RGUI, KC_NO,
+    KC_PERC,   KC_EXLM, KC_AT,   KC_LPRN, KC_RPRN, KC_HASH,
+    KC_NO, KC_RCTL, KC_RSFT, KC_RALT, KC_RGUI, KC_NO,
     // bottom
-    KC_ESC,  KC_BSLS, KC_AMPR, KC_LBRC, KC_RBRC, KC_ASTR,
-    KC_CIRC, KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_ENT,
+    KC_CIRC,  KC_BSLS, KC_AMPR, KC_LBRC, KC_RBRC, KC_ASTR,
+    KC_NO, KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_ENT,
     // thumbs
     KC_NO, KC_SPC, KC_NO,
     KC_SPC, KC_NO, KC_BSPC
