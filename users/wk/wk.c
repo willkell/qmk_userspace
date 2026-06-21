@@ -45,7 +45,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_J,    KC_M,         KC_G,         KC_P,          KC_V,          OS_RSFT,
     // thumbs
     LT(_FUN, KC_DEL), LT(_NAV, KC_ESC), LT(_SYM, KC_SPC),
-    KC_R,           LT(_NUM, KC_ENT),   KC_BSPC
+    KC_R,           LT(_NUM, KC_ENT),   KC_NO
 ),
 
 [_GAME] = LAYOUT_wk(
