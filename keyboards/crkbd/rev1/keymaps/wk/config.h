@@ -2,6 +2,11 @@
 // SPDX-License-Identifier: GPL-2.0-or-later
 #pragma once
 
+// Handedness stored per-half in EEPROM (set at flash time with the
+// avrdude-split-left / avrdude-split-right bootloader targets) rather than
+// inferred from which half holds the USB cable.
+#define EE_HANDS
+
 // crkbd has no number row — N00-N0B params are accepted but discarded.
 // The remaining 42 params map directly to LAYOUT_split_3x6_3.
 #define LAYOUT_wk( \

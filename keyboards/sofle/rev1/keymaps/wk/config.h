@@ -2,6 +2,11 @@
 // SPDX-License-Identifier: GPL-2.0-or-later
 #pragma once
 
+// Handedness stored per-half in EEPROM (set at flash time with the
+// avrdude-split-left / avrdude-split-right bootloader targets) rather than
+// inferred from which half holds the USB cable.
+#define EE_HANDS
+
 // Maps the universal layout (54 keys) to sofle's 60-key LAYOUT.
 //
 // Sofle extras filled as:
