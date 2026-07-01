@@ -3,6 +3,7 @@
     "build_targets": [
         ["sofle/rev1", "wk"],
         ["crkbd/rev1", "wk"],
-        ["handwired/dactyl_manuform/5x6_5", "wk"]
+        ["handwired/dactyl_manuform/5x6_5", "wk"],
+        ["ploopyco/madromys/rev1_001", "adept"]
     ]
 }
