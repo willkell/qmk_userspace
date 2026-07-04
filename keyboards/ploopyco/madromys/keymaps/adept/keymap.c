@@ -46,6 +46,9 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
                 is_drag_scroll = false; // hold: momentary, release ends scrolling
             }
             return false;
+        case MS_BTN1:
+            is_drag_scroll = false;
+            return true;
     }
     return true;
 }
