@@ -22,12 +22,18 @@
 // Defined in ploopyco.c; drives drag-scroll in pointing_device_task_kb.
 extern bool is_drag_scroll;
 
+enum layers {
+    _BASE,
+    _MEDIA,
+};
+
 enum custom_keycodes {
     DRG_TH = SAFE_RANGE, // tap: toggle drag-scroll; hold: momentary drag-scroll
 };
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
-    [0] = LAYOUT( MS_BTN4, MS_BTN5, DRG_TH, MS_BTN2, MS_BTN1, MS_BTN3 )
+    [_BASE]  = LAYOUT( MS_BTN4, LT(_MEDIA, MS_BTN5), DRG_TH, MS_BTN2, MS_BTN1, MS_BTN3 ),
+    [_MEDIA] = LAYOUT( KC_TRNS, KC_TRNS,             KC_TRNS, C(KC_R), KC_MPLY, KC_TRNS )
 };
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
