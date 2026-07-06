@@ -6,7 +6,6 @@
 enum wk_layers {
     _ENTHIUM,
     _GAME,
-    _QWERTY,
     _NAV,
     _SYM,
     _NUM,
