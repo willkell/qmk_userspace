@@ -7,9 +7,13 @@
 //   upper row:  L00 L01 L02 L03 L04 L05  R00 R01 R02 R03 R04 R05
 //   home row:   L10 L11 L12 L13 L14 L15  R10 R11 R12 R13 R14 R15
 //   bottom row: L20 L21 L22 L23 L24 L25  R20 R21 R22 R23 R24 R25
+//   row 5:         XL0 XL1                  XR0 XR1
 //   thumbs:                 L30 L31 L32  R30 R31 R32
 //
 // Keyboards without a number row (e.g. corne) ignore N00-N0B in their macro.
+// Row 5 is the dactyl's inner-bottom keys under the ring/middle fingers
+// (XL0 left ring, XL1 left middle, XR0 right middle, XR1 right ring); corne and
+// sofle have no such keys and discard XL0/XL1/XR0/XR1 in their macros.
 
 #include "wk.h"
 
@@ -43,9 +47,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     // bottom
     OS_LSFT, KC_QUOT,      KC_COMM,      KC_DOT,        KC_SCLN,       KC_SLSH,
     KC_J,    KC_M,         KC_G,         KC_P,          KC_V,          OS_RSFT,
+    // row 5 (dactyl inner-bottom; mirrored parens/brackets. discarded on corne/sofle)
+    KC_LPRN, KC_RPRN,   KC_LBRC, KC_RBRC,
     // thumbs
-    LT(_FUN, KC_DEL), LT(_NAV, KC_SPC), LT(_SYM, KC_ESC),
-    KC_ENT,           LT(_NUM, KC_R),   KC_NO
+    LT(_FUN, KC_DEL), LT(_NAV, KC_SPC), KC_ESC,
+    LT(_SYM, KC_ENT), LT(_NUM, KC_R),   KC_NO
 ),
 
 [_GAME] = LAYOUT_wk(
@@ -60,6 +66,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     // bottom
     KC_LCTL, KC_Z, KC_X, KC_C, KC_V, KC_B,
     KC_N,    KC_M, KC_COMM, KC_DOT, KC_SLSH, KC_ENT,
+    // row 5
+    KC_TRNS, KC_TRNS,   KC_TRNS, KC_TRNS,
     // thumbs
     LT(_NAV, KC_DEL), KC_SPC,    LT(_SYM, KC_ESC),
     OSL(_NUM),    MO(_NAV),  KC_BSPC
@@ -77,26 +85,40 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     // bottom
     KC_NO,   C(KC_Z),      C(KC_X),      C(KC_C),       C(KC_V),       KC_NO,
     KC_INS,  KC_HOME,      KC_PGDN,      KC_PGUP,       KC_END,        KC_ENT,
+    // row 5
+    KC_TRNS, KC_TRNS,   KC_TRNS, KC_TRNS,
     // thumbs
     KC_NO, KC_NO, KC_NO,
     KC_NO, KC_BSPC, KC_DEL
 ),
 
+// Symbol layer, adapted from Sunaku's Glove80 "Symbol Layer" (Glorious Engrammer,
+// https://sunaku.github.io/moergo-glove80-keyboard.html). The left hand holds the
+// symbols; the right hand keeps the home-row mods and adds whitespace/editing keys
+// (Esc/Tab/Bspc/Del/Enter/Space/Ins/S-Tab) so you can modify and insert without
+// leaving the layer. Sunaku spreads his symbols over five physical rows; here they
+// fold onto the number row + three main rows, so boards without a number row (corne)
+// only get the three main rows. Right-hand outer/inner columns carry the symbols
+// that didn't fit on the left (& \ @ % " ' :).
 [_SYM] = LAYOUT_wk(
-    // number row
-    KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,  KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,
-    // upper
-    KC_DLR,  KC_GRV,  KC_TILD, KC_LCBR, KC_RCBR, KC_PIPE,
-    KC_NO,  C(KC_H),   C(KC_J),   C(KC_K),   C(KC_L),   KC_NO,
-    // home
-    KC_PERC,   KC_EXLM, KC_AT,   KC_LPRN, KC_RPRN, KC_HASH,
-    KC_NO, KC_RCTL, KC_RSFT, KC_RALT, KC_RGUI, KC_NO,
-    // bottom
-    KC_CIRC,  KC_BSLS, KC_AMPR, KC_LBRC, KC_RBRC, KC_ASTR,
-    KC_NO, KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_ENT,
-    // thumbs
-    KC_NO, KC_SPC, KC_NO,
-    KC_SPC, KC_NO, KC_BSPC
+    // number row  (Sunaku R1 + tilde/angle spill; absent on corne)
+    KC_TILD, KC_LABK, KC_LPRN, KC_RPRN, KC_SCLN, KC_COMM,
+    KC_PERC, KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_DOT,
+    // upper       (Sunaku R2)
+    KC_PLUS, KC_GRV,  KC_LCBR, KC_RCBR, KC_RBRC, KC_QUES,
+    KC_AMPR, KC_ESC,  KC_TAB,  KC_BSPC, KC_DEL,  KC_DQUO,
+    // home        (Sunaku R3; right hand keeps home-row mods)
+    KC_EXLM, KC_LBRC, KC_EQL,  KC_UNDS, KC_DLR,  KC_ASTR,
+    KC_BSLS, KC_RCTL, KC_RSFT, KC_RALT, KC_RGUI, KC_QUOT,
+    // bottom      (Sunaku R4)
+    KC_HASH, KC_CIRC, KC_PIPE, KC_MINS, KC_RABK, KC_SLSH,
+    KC_AT,   KC_ENT,  KC_SPC,  KC_INS,  LSFT(KC_TAB), KC_COLN,
+    // row 5
+    KC_TRNS, KC_TRNS,   KC_TRNS, KC_TRNS,
+    // thumbs (left thumbs mirror Sunaku's rolls: \ escape, % match-delimiter, : cmd;
+    // right thumb holds the layer, so Space lives on the right-hand fingers instead)
+    KC_BSLS, KC_PERC, KC_COLN,
+    KC_SPC,  KC_NO,   KC_BSPC
 ),
 
 [_NUM] = LAYOUT_wk(
@@ -111,6 +133,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     // bottom
     KC_NO,   KC_SLSH, KC_1, KC_2, KC_3, KC_MINS,
     KC_NO,   KC_NO,   KC_NO, KC_NO, KC_NO, KC_ENT,
+    // row 5
+    KC_TRNS, KC_TRNS,   KC_TRNS, KC_TRNS,
     // thumbs
     KC_DOT, KC_SPC, KC_ESC,
     KC_NO,  KC_NO,  KC_NO
@@ -128,6 +152,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     // bottom
     KC_NO,   KC_F10, KC_F1, KC_F2, KC_F3, KC_PAUS,
     KC_VOLD, KC_MUTE, KC_MPLY, KC_MPRV, KC_MNXT, KC_ENT,
+    // row 5
+    KC_TRNS, KC_TRNS,   KC_TRNS, KC_TRNS,
     // thumbs
     KC_APP, KC_SPC, KC_ESC,
     KC_NO,  KC_NO,  KC_NO
