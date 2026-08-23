@@ -129,7 +129,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_NO,   KC_NO, DF(_GAME), KC_NO, QK_BOOT, KC_NO,
     // home
     KC_NO,   KC_0,    KC_4, KC_5, KC_6, KC_EQL,
-    KC_NO,   KC_LCTL, KC_LSFT, KC_LALT, KC_LGUI, KC_NO,
+    KC_NO,   KC_RCTL, KC_RSFT, KC_RALT, KC_RGUI, KC_NO,
     // bottom
     KC_NO,   KC_SLSH, KC_1, KC_2, KC_3, KC_MINS,
     KC_NO,   KC_NO,   KC_NO, KC_NO, KC_NO, KC_ENT,
@@ -148,7 +148,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_NO,   KC_NO,  DF(_GAME), KC_NO, QK_BOOT, KC_NO,
     // home
     KC_NO,   KC_F11, KC_F4, KC_F5, KC_F6, KC_SCRL,
-    KC_VOLU, KC_LCTL, KC_LSFT, KC_LALT, KC_LGUI, KC_NO,
+    KC_VOLU, KC_RCTL, KC_RSFT, KC_RALT, KC_RGUI, KC_NO,
     // bottom
     KC_NO,   KC_F10, KC_F1, KC_F2, KC_F3, KC_PAUS,
     KC_VOLD, KC_MUTE, KC_MPLY, KC_MPRV, KC_MNXT, KC_ENT,
