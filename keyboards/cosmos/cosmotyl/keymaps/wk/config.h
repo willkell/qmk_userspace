@@ -19,7 +19,6 @@
 //
 // Each hand's 5-key thumb cluster: the 3 innermost keys are universal thumbs
 // (L30-L32/R30-R32); the 2 outermost are hardcoded, mirroring the old board's
-// fixed low-thumb-row keys (left: Tab, Del; right: Bspc, Del).
 #define LAYOUT_wk( \
     N00, N01, N02, N03, N04, N05,  N06, N07, N08, N09, N0A, N0B, \
     L00, L01, L02, L03, L04, L05,  R00, R01, R02, R03, R04, R05, \
@@ -37,7 +36,7 @@ LAYOUT( \
     /* left: col5 */   L21, L11, L01, N01, \
     /* left: col6 */   L20, L10, L00, N00, \
     /* right: col0 */  KC_BSPC, R30, \
-    /* right: col1 */  KC_DEL,  R31, R20, R10, R00, N06, \
+    /* right: col1 */  KC_NO,   R31, R20, R10, R00, N06, \
     /* right: col2 */  R32, R21, R11, R01, N07, \
     /* right: col3 */  XR0, R22, R12, R02, N08, \
     /* right: col4 */  XR1, R23, R13, R03, N09, \

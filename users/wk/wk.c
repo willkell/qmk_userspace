@@ -141,8 +141,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 ),
 
 [_FUN] = LAYOUT_wk(
-    // number row
-    KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,  KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,
+    // number row: RGB matrix controls (decrease left / increase right, speed innermost)
+    RM_TOGG, RM_PREV, RM_HUED, RM_SATD, RM_VALD, RM_SPDD,
+    RM_SPDU, RM_VALU, RM_SATU, RM_HUEU, RM_NEXT, KC_NO,
     // upper
     KC_TAB,  KC_F12, KC_F7, KC_F8, KC_F9, KC_PSCR,
     KC_NO,   KC_NO,  DF(_GAME), KC_NO, QK_BOOT, KC_NO,
