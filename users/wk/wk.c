@@ -9,6 +9,7 @@
 //   bottom row: L20 L21 L22 L23 L24 L25  R20 R21 R22 R23 R24 R25
 //   row 5:         XL0 XL1                  XR0 XR1
 //   thumbs:                 L30 L31 L32  R30 R31 R32
+//   low thumbs:                 L40 L41  R40 R41
 //
 // Keyboards without a number row (e.g. corne) ignore N00-N0B in their macro.
 // Row 5 is the dactyl's inner-bottom keys under the ring/middle fingers
@@ -51,7 +52,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_LPRN, KC_RPRN,   KC_LBRC, KC_RBRC,
     // thumbs
     LT(_FUN, KC_DEL), LT(_NAV, KC_SPC), KC_ESC,
-    LT(_SYM, KC_ENT), LT(_NUM, KC_R),   KC_NO
+    LT(_SYM, KC_ENT), LT(_NUM, KC_R),   KC_NO,
+    // low thumb row (dactyl/cosmotyl only; discarded on corne/sofle)
+    KC_TAB, KC_DEL,   KC_BSPC, KC_NO
 ),
 
 [_GAME] = LAYOUT_wk(
@@ -70,7 +73,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_TRNS, KC_TRNS,   KC_TRNS, KC_TRNS,
     // thumbs
     LT(_NAV, KC_DEL), KC_SPC,    LT(_SYM, KC_ESC),
-    OSL(_NUM),    MO(_NAV),  KC_BSPC
+    OSL(_NUM),    MO(_NAV),  KC_BSPC,
+    // low thumb row (dactyl/cosmotyl only; discarded on corne/sofle)
+    KC_TAB, KC_DEL,   KC_BSPC, KC_NO
 ),
 
 [_NAV] = LAYOUT_wk(
@@ -89,7 +94,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_TRNS, KC_TRNS,   KC_TRNS, KC_TRNS,
     // thumbs
     KC_NO, KC_NO, KC_NO,
-    KC_NO, KC_BSPC, KC_DEL
+    KC_NO, KC_BSPC, KC_DEL,
+    // low thumb row (dactyl/cosmotyl only; discarded on corne/sofle)
+    KC_TAB, KC_DEL,   KC_BSPC, KC_NO
 ),
 
 // Symbol layer, adapted from Sunaku's Glove80 "Symbol Layer" (Glorious Engrammer,
@@ -118,7 +125,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     // thumbs (left thumbs mirror Sunaku's rolls: \ escape, % match-delimiter, : cmd;
     // right thumb holds the layer, so Space lives on the right-hand fingers instead)
     KC_BSLS, KC_PERC, KC_COLN,
-    KC_SPC,  KC_NO,   KC_BSPC
+    KC_SPC,  KC_NO,   KC_BSPC,
+    // low thumb row (dactyl/cosmotyl only; discarded on corne/sofle)
+    KC_TAB, KC_DEL,   KC_BSPC, KC_NO
 ),
 
 [_NUM] = LAYOUT_wk(
@@ -137,7 +146,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_TRNS, KC_TRNS,   KC_TRNS, KC_TRNS,
     // thumbs
     KC_DOT, KC_SPC, KC_ESC,
-    KC_NO,  KC_NO,  KC_NO
+    KC_NO,  KC_NO,  KC_NO,
+    // low thumb row (dactyl/cosmotyl only; discarded on corne/sofle)
+    KC_TAB, KC_DEL,   KC_BSPC, KC_NO
 ),
 
 [_FUN] = LAYOUT_wk(
@@ -157,6 +168,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_TRNS, KC_TRNS,   KC_TRNS, KC_TRNS,
     // thumbs
     KC_APP, KC_SPC, KC_ESC,
-    KC_NO,  KC_NO,  KC_NO
+    KC_NO,  KC_NO,  KC_NO,
+    // low thumb row (dactyl/cosmotyl only; discarded on corne/sofle)
+    KC_TAB, KC_DEL,   KC_BSPC, KC_NO
 ),
 };
