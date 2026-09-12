@@ -174,13 +174,6 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 ),
 };
 
-// Chordal Hold handedness, written positionally with LAYOUT_wk so it needs no
-// per-row matrix arithmetic. The cosmotyl's matrix skips a row per half (see
-// keyboard.json: rows go 0-5 then 7-12), which made the old row-based
-// chordal_hold_handedness() fragile; here each key just states its own hand.
-// Every thumb is '*' (neither hand) so a thumb held with a same-hand finger
-// still resolves as a hold. Params the board discards (number row on corne,
-// row 5 / low thumbs on corne) are harmless.
 const char chordal_hold_layout[MATRIX_ROWS][MATRIX_COLS] PROGMEM = LAYOUT_wk(
     // number row
     'L', 'L', 'L', 'L', 'L', 'L',  'R', 'R', 'R', 'R', 'R', 'R',
