@@ -4,6 +4,5 @@
 
 #define CAPS_WORD_INVERT_ON_SHIFT
 
-#include "hrm_config.h"
-
-#define COMBO_SHOULD_TRIGGER
+// home row mod tuning shared with the rest of the wk boards
+#include "../../../../../users/wk/hrm_config.h"
