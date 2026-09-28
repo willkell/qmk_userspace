@@ -1,11 +1,33 @@
 {
     "userspace_version": "1.1",
     "build_targets": [
-        ["sofle/rev1", "wk"],
-        ["crkbd/rev1", "wk"],
-        ["handwired/dactyl_manuform/5x6_5", "wk"],
-        ["ploopyco/madromys/rev1_001", "adept"],
-        ["cosmos/cosmotyl", "wk"],
-        ["coseyfannitutti/discipline", "wk"]
+        [
+            "sofle/rev1",
+            "wk"
+        ],
+        [
+            "crkbd/rev1",
+            "wk"
+        ],
+        [
+            "handwired/dactyl_manuform/5x6_5",
+            "wk"
+        ],
+        [
+            "ploopyco/madromys/rev1_001",
+            "adept"
+        ],
+        [
+            "cosmos/cosmotyl",
+            "wk"
+        ],
+        [
+            "coseyfannitutti/discipline",
+            "wk"
+        ],
+        [
+            "planck/rev6",
+            "wk"
+        ]
     ]
 }
